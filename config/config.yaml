@@ -1,0 +1,52 @@
+# 服务器端口配置
+server:
+  port: :8080
+# 数据库配置
+database:
+  dsn: root:root@tcp(127.0.0.1:3306)/db_name?charset=utf8mb4&parseTime=True&loc=Local
+  MaxIdleConns: 10
+  MaxOpenConns: 100
+# JWT配置
+jwt:
+  # 设置jwt签名加密时使用的秘钥
+  secretKey: your_secretKey
+  # 设置前端传递过来的令牌名称
+  adminTokenName: your_adminTokenName
+  # 微信小程序用户端登录设置令牌
+  userTokenName: your_userTokenName
+# 阿里OSS配置
+aliOSS:
+  endpoint: your_endpoint
+  accessKeyId: your_accessKeyId
+  accessKeySecret: your_accessKeySecret
+  bucketName: your_bucketName
+# redis配置
+redis:
+  host: localhost
+  # password:
+  port: 6379
+  database: 0
+# 微信小程序所需配置
+wechat:
+  # 微信登录所需配置
+  # 小程序的appid
+  appid: your_appid
+  # 小程序的秘钥
+  secret: your_secret
+  # 微信支付所需配置
+  # 商户号
+  mchid: your_mchid
+  # 商户API证书的证书序列号
+  mchSerialNo: your_mchSerialNo
+  # 商户私钥文件
+  privateKeyFilePath: your_privateKeyFilePath
+  # 证书解密的密钥
+  apiV3Key: your_apiV3Key
+  # 平台证书
+  weChatPayCertFilePath: your_weChatPayCertFilePath
+  # 支付成功的回调地址
+  # cpolar生成的临时公网地址 https://xxxxxx.cpolar.top
+  # 每次测试使用到微信支付功能都需要重新生成并改写
+  notifyUrl: https://xxxxxx.cpolar.top/notify/paySuccess
+  # 退款成功的回调地址
+  refundNotifyUrl: https://xxxxxx.cpolar.top/notify/refundSuccess
